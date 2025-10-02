@@ -134,22 +134,34 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold gradient-text">GEEK WEB 3.0</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="hover:text-blue-400 transition-colors">Услуги</a>
-                    <a href="#process" class="hover:text-blue-400 transition-colors">Процесс</a>
-                    <a href="#ai-tools" class="hover:text-blue-400 transition-colors">ИИ-инструменты</a>
-                    <a href="#contact" class="hover:text-blue-400 transition-colors">Контакты</a>
-                </div>
-                <button class="md:hidden text-white">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+   <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="text-2xl font-bold gradient-text">GEEK WEB 3.0</div>
+
+      <!-- Десктоп-меню -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#services" class="hover:text-blue-400 transition-colors">Услуги</a>
+        <a href="#process" class="hover:text-blue-400 transition-colors">Процесс</a>
+        <a href="#ai-tools" class="hover:text-blue-400 transition-colors">ИИ-инструменты</a>
+        <a href="#contact" class="hover:text-blue-400 transition-colors">Контакты</a>
+      </div>
+
+      <!-- Кнопка-бургер -->
+      <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+        <i id="mobile-menu-icon" class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center">
+      <a href="#services" class="block hover:text-blue-400 transition-colors">Услуги</a>
+      <a href="#process" class="block hover:text-blue-400 transition-colors">Процесс</a>
+      <a href="#ai-tools" class="block hover:text-blue-400 transition-colors">ИИ-инструменты</a>
+      <a href="#contact" class="block hover:text-blue-400 transition-colors">Контакты</a>
+    </div>
+  </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center relative" id="hero">
@@ -538,16 +550,25 @@
             });
 
             // Mobile menu toggle
-            const mobileMenuButton = document.querySelector('.md\\:hidden button');
-            const mobileMenu = document.querySelector('.md\\:flex');
-            
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', function() {
-                    // Toggle mobile menu logic here
-                    console.log('Mobile menu clicked');
-                });
-            }
-        });
+          // Mobile menu toggle
+const btn  = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+const icon = document.getElementById('mobile-menu-icon');
+
+btn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-times');
+});
+
+// Закрыть меню при клике на ссылку
+menu.querySelectorAll('a').forEach(link =>
+  link.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    icon.classList.add('fa-bars');
+    icon.classList.remove('fa-times');
+  })
+);
     </script>
 </body>
 </html>
