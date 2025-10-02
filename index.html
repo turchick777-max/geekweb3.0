@@ -133,13 +133,14 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-   <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
+  <!-- NAVIGATION -->
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
+      <!-- LOGO -->
       <div class="text-2xl font-bold gradient-text">GEEK WEB 3.0</div>
 
-      <!-- Десктоп-меню -->
+      <!-- DESKTOP MENU -->
       <div class="hidden md:flex space-x-8">
         <a href="#services" class="hover:text-blue-400 transition-colors">Услуги</a>
         <a href="#process" class="hover:text-blue-400 transition-colors">Процесс</a>
@@ -147,13 +148,13 @@
         <a href="#contact" class="hover:text-blue-400 transition-colors">Контакты</a>
       </div>
 
-      <!-- Кнопка-бургер -->
+      <!-- MOBILE BUTTON -->
       <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
         <i id="mobile-menu-icon" class="fas fa-bars text-2xl"></i>
       </button>
     </div>
 
-    <!-- Мобильное меню -->
+    <!-- MOBILE MENU (hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center">
       <a href="#services" class="block hover:text-blue-400 transition-colors">Услуги</a>
       <a href="#process" class="block hover:text-blue-400 transition-colors">Процесс</a>
@@ -162,7 +163,6 @@
     </div>
   </div>
 </nav>
-
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center relative" id="hero">
         <div class="hero-content container mx-auto px-6 text-center">
@@ -549,8 +549,7 @@
                 });
             });
 
-            // Mobile menu toggle
-          // Mobile menu toggle
+           // Mobile menu toggle
 const btn  = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('mobile-menu');
 const icon = document.getElementById('mobile-menu-icon');
@@ -561,7 +560,7 @@ btn.addEventListener('click', () => {
   icon.classList.toggle('fa-times');
 });
 
-// Закрыть меню при клике на ссылку
+// Close on link click
 menu.querySelectorAll('a').forEach(link =>
   link.addEventListener('click', () => {
     menu.classList.add('hidden');
@@ -569,6 +568,3 @@ menu.querySelectorAll('a').forEach(link =>
     icon.classList.remove('fa-times');
   })
 );
-    </script>
-</body>
-</html>
